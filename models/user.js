@@ -39,6 +39,6 @@ User_Schema.method('authenticate', function(plainText, inSalt, hashed_password) 
     }
 })
 
-const user_Model = mongoose.model('User', User_Schema)
+const user_Model = mongoose.model('Wiki_user', User_Schema)
 
 module.exports = user_Model
