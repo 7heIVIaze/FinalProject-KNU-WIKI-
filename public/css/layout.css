@@ -1,0 +1,282 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans","arial","Apple SD Gothic Neo","Noto Sans CJK KR","본고딕","KoPubDotum","나눔바른고딕","나눔고딕","NanumGothic","맑은고딕","Malgun Gothic",sans-serif;
+    font-size: 16px;
+}
+
+.main_header {
+    width: 99%;
+    height: 25px;
+    padding: 8px;
+    background-color: #ef1010;
+}
+
+a.main_link {
+    text-decoration: none;
+    color: white;
+}
+
+a.login_link {
+    text-decoration: none;
+    color: white;
+    float: right;
+}
+
+a.login_link:hover {
+    background-color: #ff009f;
+}
+
+a.newpost {
+    color: blue;
+}
+
+a.newpost:hover {
+    text-decoration: underline;
+}
+
+.search_box {
+    display: flex;
+    width: 100%;
+}
+
+.document {
+    background-color: #efefef;
+}
+
+.docbody {
+    max-width: 1200px;
+    padding: 5px;
+    margin: 0 auto;
+    background-color: white;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+}
+
+.search_input {
+    width: 100%;
+    height: 26px;
+}
+
+.search_button {
+    display: inline;
+    width: 40px;
+    border: 1px solid #999999;
+    background-color: #fff;
+}
+
+.container {
+    padding: 8px;
+    min-height: 800px;
+}
+
+.margin_top16 {
+    margin-top: 16px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.created_at {
+    text-align: right;
+    font-size: 14px;
+}
+
+.body {
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.edit {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.post_input {
+    margin: 10px;
+    width: 98%;
+    height: 500px;
+    resize: none;
+}
+
+.editor {
+    margin: 10px;
+    width: 99%;
+    height: 500px;
+    overflow: auto;
+    border: 1px solid #999999;
+    border-radius: 4px;
+}
+
+.post_button_box {
+    width: 100%;
+}
+
+.post_button {
+    float: right;
+    background-color: rgb(0, 100, 255);
+    color: white;
+    width: 100px;
+    height: 30px;
+    size: 30px;
+    border: 0;
+    outline: 0;
+}
+
+.createbtn:hover {
+    background-color: rgb(0, 40, 234);
+}
+
+footer {
+    border-top: 1px solid #cccccc;
+    padding: 10px;
+    margin-top: 10px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttoncontainer {
+    max-width: 1210px;
+    height: 32px;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid #999999;
+    border-top: 0;   
+}
+
+.wikiButton {
+    width: 64px;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #999999;
+    background-color: #fff;
+}
+
+.edit_button {
+    list-style: none;
+    margin-bottom: -10px;
+    margin-top: 0;
+    padding-left: 10px;
+    height: 36px;
+}
+
+.edit_li {
+    float: left;
+    margin-bottom: -1px;
+}
+
+.style_li {
+    float: right;
+}
+
+.style_container {
+    display: inline-block;
+    margin-left: -7px;
+}
+
+.editor_button {
+    height: 36px;
+    width: 100px;
+    justify-content: center;
+    border: 1px solid #999999;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.style_button {
+    height: 36px;
+    width: 54px;
+    justify-content: center;
+    border: 1px solid #999999;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.login {
+    width: 100%;
+    padding: 5px;
+    display: block;
+}
+.login_input {
+    margin: 0 auto;
+    padding: 5px;
+    justify-content: left;
+    width: 500px;
+}
+
+.loginInput_Text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 500px;
+    height: 25px;
+}
+
+.registerlink {
+    float: right;
+}
+
+.button_box {
+    margin-top: 10px;
+    margin-right: -1rem;
+    float: right;
+}
+
+.dup_button_box {
+    margin-top: -25px;
+    margin-left: 80px;
+}
+
+.loginButton {
+    width: 80px;
+    height: 35px;
+    background-color: rgb(0, 100, 255);
+    color: white;
+    size: 30px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.disable {
+    width: 80px;
+    height: 35px;
+    background-color: white;
+    color: black;
+    size: 30px;
+    border: 1px solid #cccccc;
+    outline: 0;
+}
+
+.loginButton:hover {  
+    background-color: rgb(0, 40, 234);
+}
+
+.registerButton {
+    width: 80px;
+    height: 35px;
+    background-color: white;
+    color: black;
+    size: 30px;
+    border: 1px solid #cccccc;
+    outline: 0;
+    cursor: pointer;
+}
+
+.registerButton:hover {  
+    background-color: #efefef;
+}

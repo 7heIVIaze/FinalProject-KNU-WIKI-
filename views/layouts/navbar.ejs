@@ -1,0 +1,14 @@
+<div class="main_header">
+    <a class="main_link" href="/">KNU WIKI</a>
+    <% if(isAuthenticated) { %>
+        <a href="/member/logout" class="login_link"><span class="material-icons">account_circle</span></a>
+    <% } else { %> 
+        <a href="/member/login" class="login_link"><span class="material-icons">person</span></a>
+    <% } %>
+</div>
+<form action="/w" method="get">
+    <div class="search_box">
+        <input type="text" name="document" id="search" class="search_input">
+        <button type="submit" class="search_button"><span class="material-icons">search</span></button>
+    </div>
+</form> 

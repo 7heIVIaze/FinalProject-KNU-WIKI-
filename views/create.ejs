@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<%- include('layouts/header'); -%>
+<%- include('layouts/script'); -%>
+<body>
+    <%- include('layouts/navbar'); -%>
+    <div class="document">
+        <div class="docbody">
+            <div class="container">
+                <div class="margin_top16">
+                    <div class="title" id="title">
+                        <%= title %>&nbsp
+                    <% if(typeof body == 'undefined') { %>
+                            <div class="edit">(새 문서 생성)</div>
+                        </div>
+                        <form action="/post/<%= title %>" method="post" onsubmit="prepareDiv()">
+                            <textarea name="create" id="create" class="post_input" style="display: none;"></textarea>
+                            <ul class="edit_button">
+                                <li class="edit_li">
+                                    <button type="button" id="editing" class="editor_button" onclick="make_editor()">편집기</button>
+                                </li>
+                                <li class="edit_li">
+                                    <button type="button" id="preshow" class="editor_button" onclick="pre_show()">미리보기</button>
+                                </li>
+                                <li class="edit_li style_li">
+                                    <div class="style_container"><button type="button" id="bold_button" class="style_button" onclick="textBold()"><b>굵게</b></button></div>
+                                    <div class="style_container"><button type="button" id="italic_button" class="style_button" onclick="textItalic()"><i>기울임</i></button></div>
+                                    <div class="style_container"><button type="button" id="linethrough_button" class="style_button" onclick="textLineThrough()"><span style="text-decoration:line-through">취소선</span></button></div>
+                                    <div class="style_container"><button type="button" id="link_button" class="style_button" onclick="textLink()"><span>링크</span></button></div>
+                                    <div class="style_container"><button type="button" id="file_button" class="style_button" onclick="fileLink()"><span>파일</span></button></div>
+                                </li>
+                            </ul>
+                            <div class="editor" name="create" id="create_div" contenteditable="true"></div>
+                            <div class="editor hidden" id="show_div"></div>
+                            <div class="post_button_box"><button class="post_button" id="post_button">저장</input></div>
+                        </form>
+                    <% } else { %>
+                            <div class="edit">(r<%= version %>) 편집</div>
+                        </div>
+                        <form action="/post/<%= title %>" method="post" onsubmit="prepareDiv()">
+                            <textarea name="create" id="create" class="post_input" style="display: none;"></textarea>
+                            <ul class="edit_button">
+                                <li class="edit_li">
+                                    <button type="button" id="editing" class="editor_button" onclick="make_editor()">편집기</button>
+                                </li>
+                                <li class="edit_li">
+                                    <button type="button" id="preshow" class="editor_button" onclick="pre_show()">미리보기</button>
+                                </li>
+                                <li class="edit_li style_li">
+                                    <div class="style_container"><button type="button" id="bold_button" class="style_button" onclick="textBold()"><b>굵게</b></button></div>
+                                    <div class="style_container"><button type="button" id="italic_button" class="style_button" onclick="textItalic()"><i>기울임</i></button></div>
+                                    <div class="style_container"><button type="button" id="linethrough_button" class="style_button" onclick="textLineThrough()"><span style="text-decoration:line-through">취소선</span></button></div>
+                                    <div class="style_container"><button type="button" id="link_button" class="style_button" onclick="textLink()"><span>링크</span></button></div>
+                                    <div class="style_container"><button type="button" id="file_button" class="style_button" onclick="fileLink()"><span>파일</span></button></div>
+                                </li>
+                            </ul>
+                            <div class="editor" name="create" id="create_div" contenteditable="true">
+                                <% for(let i = 0; i<body.length; i++) { %>
+                                    <%= body[i] %>
+                                    <br>
+                                <% } %>
+                            </div>
+                            <div class="editor hidden" id="show_div"></div>
+                            <div class="post_button_box"><button class="post_button" id="post_button">저장</input></div>
+                        </form>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('layouts/footer'); -%>
+        <script src="/js/edit.js"></script>
+    
+</body>
+</html>

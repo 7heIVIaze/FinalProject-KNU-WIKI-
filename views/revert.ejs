@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/navbar'); -%>
+    <div class="document">
+        <div class="docbody">
+            <div class="container">
+                <div class="margin_top16">
+                    <div class="title" id="title">
+                        <%= document.wiki_doc_title %>
+                        <div class="edit">&nbsp(r<%= document.version %>로 되돌리기)</div>
+                    </div>
+                    <form action="/postrevert/<%= document.wiki_doc_title %>?version=<%= document.version %>" method="post">
+                        <textarea name="revert" id="revert" class="post_input" disabled><%= document.body %></textarea>
+                        <button type="submit" class="post_button">저장</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('layouts/footer'); -%>
+    <%- include('layouts/script'); -%>
+</body>
+</html>

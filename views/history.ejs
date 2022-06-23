@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/navbar'); -%>
+    <header class="document">
+        <div class="docbody">
+            <div class="container">
+                <div class="margin_top16">
+                    <% if(typeof document[0] === 'undefined') { %>
+                        <div class="title">오류</div>
+                        <div class="body">문서를 찾을 수 없습니다.</div>
+                    <% } else { %>
+                        <div class="title"><%= document[0].wiki_doc_title %></div>
+                        <% for(let i = 0; i < document.length; i++) { %>
+                            <div class="body">
+                                <li>
+                                    <%= document[i].createdAt.toLocaleString() %> (
+                                        <a class="newpost" href="/w/<%= document[i].wiki_doc_title %>?version=<%= document[i].version %>">보기</a> |
+                                        <a class="newpost" href="/revert/<%= document[i].wiki_doc_title %>?rev=<%= document[i].version %>">되돌리기</a>
+                                    ) <b>r<%=document[i].version %></b>
+                                    <%= document[i].writer %>
+                                </li>
+                            </div>
+                        <% } %>
+                    <% } %>  
+                </div>
+            </div>
+        </div>
+    </header>
+    <%- include('layouts/footer'); -%>
+    <%- include('layouts/script'); -%>
+</body>
+</html>

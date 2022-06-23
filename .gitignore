@@ -1,0 +1,22 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Node template
+# Logs
+logs
+*.log
+npm-debug.log*
+
+
+# dependency directory
+node_modules/
+
+# notused directory
+notuse/
+
+# Optional npm cache directory
+.npm
+
+# dotenv environment variables file
+.env
+
+# data testing file
+test.js

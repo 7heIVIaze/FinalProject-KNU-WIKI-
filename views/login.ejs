@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/navbar'); -%>
+    <header class="document">
+        <div class="docbody">
+            <div class="container">
+                <div class="margin_top16">
+                    <div class="title">로그인</div>
+                    <div class="body">
+                        <div class="login">
+                            <form action="/member/dologin" method="post">
+                                <div class="login_input">
+                                    <label for="usernameInput">Username</label>
+                                    <input type="text" name="usernameInput" id="usernameInput" class="loginInput_Text">
+                                    <label for="passwordInput">Password</label>
+                                    <input type="password" name="passwordInput" id="passwordInput" class="loginInput_Text">
+                                    <div class="button_box">
+                                        <button type="button" class="registerButton" onclick="location.href='/member/signup'">회원가입</button>
+                                        <button type="submit" class="loginButton">로그인</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <%- include('layouts/footer'); -%>
+    <%- include('layouts/script'); -%>
+</body>
+</html>

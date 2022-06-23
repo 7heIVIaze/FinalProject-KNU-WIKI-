@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/navbar'); -%>
+    <header class="document">
+        <div class="docbody">
+            <div class="container">
+                <div class="margin_top16">
+                    <div class="title">회원가입</div>
+                    <div class="body">
+                        <div class="login">
+                            <form action="/member/dosignup" method="post" onsubmit="return checkAll()">
+                                <div class="login_input">
+                                    <label for="usernameInput">사용자 ID</label>
+                                    <div class="dup_button_box"><button type="button" class="registerButton" id="dupcheckButton" onclick="DupCheck()">중복검사</button></div>
+                                    <input type="text" name="usernameInput" id="usernameInput" class="loginInput_Text">
+                                    <label for="passwordInput">암호</label>
+                                    <input type="password" name="passwordInput" id="passwordInput" class="loginInput_Text">
+                                    <label for="passwordInput">암호 확인</label>
+                                    <input type="password" name="passwordReInput" id="passwordReInput" class="loginInput_Text">
+                                    <div class="button_box">
+                                        <button type="submit" class="loginButton">가입</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <%- include('layouts/footer'); -%>
+    <%- include('layouts/script'); -%>
+    <script src="/js/register.js"></script>
+</body>
+</html>

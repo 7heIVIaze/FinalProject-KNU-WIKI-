@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/navbar'); -%>
+    <header class="document">
+        <%- include('layouts/wikiButton'); -%>
+        <div class="docbody">
+            <div class="container">
+                <div class="margin_top16">
+                    <% if(typeof createdAt ===  'undefined') { %>
+                        <div class="title"><%= title %></div>
+                        <div class="body">해당 문서를 찾을 수 없습니다.</div>
+                        <div class="eidtbtn"><a href="/edit/<%= title %>" class="newpost">[새 문서 만들기]</a></div>
+                        <% } else { %>
+                            <div class="title"><%= title %></div>
+                            <div class="created_at">최근 수정 시각: <%= createdAt.toLocaleString() %></div>
+                            <div id="Docbody" style="display: none;"><%= body %></div>
+                            <div class="body" id="parsedbody"></div>
+                            <% } %>  
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <script src="/js/document.js"></script>
+    <%- include('layouts/footer'); -%>
+    <%- include('layouts/script'); -%>
+  
+</body>
+</html>
