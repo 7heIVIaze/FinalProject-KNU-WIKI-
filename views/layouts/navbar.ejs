@@ -1,9 +1,9 @@
 <div class="main_header">
     <a class="main_link" href="/">KNU WIKI</a>
     <% if(isAuthenticated) { %>
-        <a href="/member/logout" class="login_link"><span class="material-icons">account_circle</span></a>
+        <a href="/member/logout" class="login_link"><span class="material-icons">person</span></a>
     <% } else { %> 
-        <a href="/member/login" class="login_link"><span class="material-icons">person</span></a>
+        <a href="/member/login" class="login_link"><span class="material-icons">account_circle</span></a>
     <% } %>
 </div>
 <form action="/w" method="get">
