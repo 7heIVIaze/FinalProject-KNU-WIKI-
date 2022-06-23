@@ -5,6 +5,8 @@ module.exports = async (req, res) => {
     let userPwd = req.body.passwordInput
     userPwd += ''
     let userPwdTrimmed = userPwd.trim()
+    console.log(userId)
+    console.log(userPwdTrimmed)
     let user = new UserModel({
         username: userId,
         password: userPwdTrimmed,
