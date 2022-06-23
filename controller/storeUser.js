@@ -1,8 +1,9 @@
 const UserModel = require('../models/user')
 
 module.exports = async (req, res) => {
-    const userId = req.body.usernameInput
-    const userPwd = req.body.passwordInput
+    let userId = req.body.usernameInput
+    let userPwd = req.body.passwordInput
+    userPwd += ''
     let userPwdTrimmed = userPwd.trim()
     let user = new UserModel({
         username: userId,
