@@ -14,7 +14,7 @@ async function DupCheck() {
             dupButton.innerText='확인완료'
             dupButton.setAttribute('class', 'disable')
             dupButton.disabled = true
-            usernameInput.disabled = true
+            usernameInput.readOnly = true
         }
         else alert('다른 아이디를 입력해주세요.')
     }
