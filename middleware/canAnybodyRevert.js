@@ -11,6 +11,7 @@ module.exports = async (req, res, next) => {
     const document = await doc_version_Model.findOne({wiki_doc_title: docName}).sort({"_id": -1}).limit(1)
     // 편집제한 문서인지 확인하기 위해 최근에 저장된 데이터 가져옴
 
+    if(!document) return res.redirect('/')
     if(document.canAnybodyWrite && req.user == null) { // 로그인 안한 이용자가 편집제한 문서를 편집하려할 때
         if(version) return res.redirect(`/w/${docName}?version=${version}`)
         else if(!version) return res.redirect(`/w/${docName}`)
