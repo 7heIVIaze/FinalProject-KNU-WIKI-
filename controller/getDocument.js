@@ -20,13 +20,24 @@ module.exports = async (req, res)=>{
 
     if(!document) res.render('document', {title: search})
     else {
-        const body = marked.marked(document.body)
-        res.render('document', {
-        title: document.wiki_doc_title,
-        createdAt: document.createdAt,
-        body: body,
-        version: document.version,
-        canAnybodyWrite: document.canAnybodyWrite
-       })
+        if(version) {
+            const body = marked.marked(document.body)
+            res.render('document', {
+                title: document.wiki_doc_title,
+                createdAt: document.createdAt,
+                body: body,
+                version: version,
+                canAnybodyWrite: document.canAnybodyWrite
+            })
+        }
+        else {
+            const body = marked.marked(document.body)
+                res.render('document', {
+                title: document.wiki_doc_title,
+                createdAt: document.createdAt,
+                body: body,
+                canAnybodyWrite: document.canAnybodyWrite
+            })
+        }
     }
 }

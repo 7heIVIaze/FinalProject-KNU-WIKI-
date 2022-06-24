@@ -16,7 +16,12 @@
                             <% if(canAnybodyWrite) { %>
                                 <div id="marked"></div>   
                             <% } %>
-                            <div class="title"><%= title %></div>
+                            <div class="title">
+                                <%= title %>&nbsp
+                                <% if(typeof version !== 'undefined') { %> 
+                                    <div class="edit">(r<%= version %> 판)</div>
+                                <% } %>
+                            </div>
                             <div class="created_at">최근 수정 시각: <%= createdAt.toLocaleString() %></div>
                             <div id="Docbody" style="display: none;"><%= body %></div>
                             <div class="body" id="parsedbody"></div>
