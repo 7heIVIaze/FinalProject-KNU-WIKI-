@@ -1,7 +1,9 @@
 # KNU WIKI
 ---
-사이트 주소: https://knu-wiki.herokuapp.com/
+
+사이트 주소: https://knu-wiki.herokuapp.com/<br>
 헤로쿠 무료 서버가 느리기 때문에 렉이 걸릴 수 있습니다.
+
 ---
 the Final Project of advanced Web Programming lecture<br>
 This is wiki page built with nodejs and expressJS<br>
