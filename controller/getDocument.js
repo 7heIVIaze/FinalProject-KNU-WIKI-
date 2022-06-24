@@ -18,20 +18,20 @@ module.exports = async (req, res)=>{
         // url에 버전이 없는 경우 id의 내림차순으로 정렬한 뒤 id값이 가장큰 데이터를 찾아옴
     }
 
-    if(!document) res.render('document', {title: search})
+    if(!document) res.render('document', {title: search}) // 문서가 없는 경우 문서명만 전달
     else {
-        if(version) {
-            const body = marked.marked(document.body)
+        if(version) { // 과거 버전의 문서를 보는 경우 해당 전체 문서 내용과 해당 버전 값을 전달함
+            const body = marked.marked(document.body) // 문서 내용이 마크다운 형식이기 때문에 파싱하는 코드임
             res.render('document', {
                 title: document.wiki_doc_title,
                 createdAt: document.createdAt,
                 body: body,
                 version: version,
                 canAnybodyWrite: document.canAnybodyWrite
-            })
+            }) 
         }
-        else {
-            const body = marked.marked(document.body)
+        else { // 사용자가 검색하여 들어간 경우에는 버전 값을 제외한 모든 정보를 전달함
+            const body = marked.marked(document.body) // 문서 내용이 마크다운 형식이기 때문에 파싱하는 코드임
                 res.render('document', {
                 title: document.wiki_doc_title,
                 createdAt: document.createdAt,

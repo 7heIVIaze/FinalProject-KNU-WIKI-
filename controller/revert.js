@@ -11,5 +11,6 @@ module.exports = async (req, res) => {
     const document = await doc_version_Model.findOne({wiki_doc_title: docName, version: version})
     // 해당하는 문서명과 버전의 값을 가져옴
     
-    res.render('revert', {document: document})
+    if(document) res.render('revert', {document: document})
+    else res.render('/')
 }
