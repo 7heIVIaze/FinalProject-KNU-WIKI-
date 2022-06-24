@@ -1,5 +1,5 @@
-var requestIp = require('request-ip')
-
 module.exports = (req, res) => {
-    res.render('index')
+    const home = '크누위키:대문'
+
+    res.redirect(`/w/${home}`)
 }

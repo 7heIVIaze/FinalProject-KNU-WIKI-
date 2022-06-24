@@ -5,15 +5,31 @@ function prepareDiv() {
 }
 
 function make_editor() {
+    const editorButton = document.getElementById('editing')
+    const preshowButton = document.getElementById('preshow')
     $('#create_div').removeClass('hidden')
     $('#show_div').addClass('hidden')
+    $('#editing').removeClass('editor_button')
+    $('#editing').addClass('apply')
+    $('#preshow').removeClass('apply')
+    $('#preshow').addClass('editor_button')
+    editorButton.disabled = true
+    preshowButton.disabled = false
 }
 
 function pre_show() {
+    const editorButton = document.getElementById('editing')
+    const preshowButton = document.getElementById('preshow')
     const body = document.getElementById("create_div").innerText
     document.getElementById("show_div").innerHTML = marked.parse(body)
     $('#create_div').addClass('hidden')
     $('#show_div').removeClass('hidden')
+    $('#preshow').removeClass('editor_button')
+    $('#preshow').addClass('apply')
+    $('#editing').removeClass('apply')
+    $('#editing').addClass('editor_button')
+    editorButton.disabled = false
+    preshowButton.disabled = true
 }
 
 function textBold() {
