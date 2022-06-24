@@ -8,6 +8,9 @@
         <div class="docbody">
             <div class="container">
                 <div class="margin_top16">
+                    <% if(canAnybodyWrite) { %>
+                        <div id="marked"></div>   
+                    <% } %>
                     <% if(typeof createdAt ===  'undefined') { %>
                         <div class="title"><%= title %></div>
                         <div class="body">해당 문서를 찾을 수 없습니다.</div>

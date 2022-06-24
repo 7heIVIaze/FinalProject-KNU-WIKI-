@@ -6,6 +6,7 @@ const Doc_Version_Schema = new mongoose.Schema({
     version: {type: Number},
     wiki_doc_title: {type: String},
     writer: {type: String},
+    canAnybodyWrite: {type: Boolean, default: false},
 })
 
 const doc_version_Model = mongoose.model('Doc_Version', Doc_Version_Schema)

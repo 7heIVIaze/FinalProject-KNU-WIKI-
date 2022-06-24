@@ -1,9 +1,7 @@
 const doc_version_Model = require('../models/document')
-//const showdown = require('showdown')
 const marked = require('marked')
 
 module.exports = async (req, res)=>{
-    //const converter = new showdown.Converter()
     const version = req.query.version // 버전
     const url = req.url // /w/문서명(encoded)
     const parsedurl = url.split('/') // '', w, 문서명(encoded)
@@ -22,13 +20,13 @@ module.exports = async (req, res)=>{
 
     if(!document) res.render('document', {title: search})
     else {
-        //const body = converter.makeHtml(document.body)
         const body = marked.marked(document.body)
         res.render('document', {
         title: document.wiki_doc_title,
         createdAt: document.createdAt,
         body: body,
-        version: document.version
+        version: document.version,
+        canAnybodyWrite: document.canAnybodyWrite
        })
     }
 }

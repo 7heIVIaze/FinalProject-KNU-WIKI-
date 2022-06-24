@@ -8,8 +8,6 @@ module.exports = async (req, res) => {
     let writer = requestIp.getClientIp(req)
     let version = 1 // 없는 경우 버전은 1이기 때문에 초기값임
     if(req.user) writer = req.user.username
-    console.log(writer)
-    
 
     const document = await doc_version_Model.findOne({wiki_doc_title: title}).sort({"_id": -1}).limit(1)
     if(document) version = document.version + 1 // 이전 문서가 존재할 경우 버전을 +1 시켜줌
