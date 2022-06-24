@@ -8,14 +8,14 @@
         <div class="docbody">
             <div class="container">
                 <div class="margin_top16">
-                    <% if(canAnybodyWrite) { %>
-                        <div id="marked"></div>   
-                    <% } %>
                     <% if(typeof createdAt ===  'undefined') { %>
                         <div class="title"><%= title %></div>
                         <div class="body">해당 문서를 찾을 수 없습니다.</div>
                         <div class="eidtbtn"><a href="/edit/<%= title %>" class="newpost">[새 문서 만들기]</a></div>
                         <% } else { %>
+                            <% if(canAnybodyWrite) { %>
+                                <div id="marked"></div>   
+                            <% } %>
                             <div class="title"><%= title %></div>
                             <div class="created_at">최근 수정 시각: <%= createdAt.toLocaleString() %></div>
                             <div id="Docbody" style="display: none;"><%= body %></div>
