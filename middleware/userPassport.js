@@ -8,7 +8,7 @@ passport.use(
             usernameField: 'usernameInput',
             passwordField: 'passwordInput',
             session: true,
-        },
+        }, // passport에서 username과 password의 값이usernameInput과 passwordInput임 
         function(username, password, done) {
             UserModel.findOne({ username: username}, function(err, user) {
                 if(err) return done(err)
