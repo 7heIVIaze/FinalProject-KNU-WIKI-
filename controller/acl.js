@@ -2,8 +2,8 @@ const doc_version_Model = require('../models/document')
 const requestIp = require('request-ip')
 
 module.exports = async (req, res) => {
-    const url = req.url // /w/문서명(encoded)
-    const parsedurl = url.split('/') // '', w, 문서명(encoded)
+    const url = req.url // /acl/문서명(encoded)
+    const parsedurl = url.split('/') // '', acl, 문서명(encoded)
     let search = decodeURI(parsedurl[2]) // 문서명(decoded) => 그냥 문서 이름
     let version = 1 // 임시 버전값
     let writer = requestIp.getClientIp(req) // 작성자는 일단 해당 작성자의 ip
