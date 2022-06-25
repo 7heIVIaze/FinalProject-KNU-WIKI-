@@ -10,7 +10,7 @@
                     <div class="title">로그인</div>
                     <div class="body">
                         <div class="login">
-                            <form action="/member/dologin" method="post">
+                            <form action="/member/dologin" method="post" onsubmit="return loginCheck()">
                                 <div class="login_input">
                                     <label for="usernameInput">Username</label>
                                     <input type="text" name="usernameInput" id="usernameInput" class="loginInput_Text">
@@ -30,5 +30,6 @@
     </header>
     <%- include('layouts/footer'); -%>
     <%- include('layouts/script'); -%>
+    <script src="/js/register.js"></script>
 </body>
 </html>

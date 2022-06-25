@@ -47,3 +47,19 @@ function checkAll() {
     }
     return true
 }
+
+function loginCheck() {
+    const usernameInput = document.getElementById('usernameInput')
+    const passwordInput = document.getElementById('passwordInput')
+    if(!usernameInput) {
+        alert('username을 입력해주세요.')
+        usernameInput.focus()
+        return false
+    }
+    if(!passwordInput.value) {
+        alert('비밀번호를 입력해주세요.')
+        passwordInput.focus()
+        return false
+    }
+    return true
+}
